@@ -6,7 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../screen/homescreen/phone_home_page.dart';
 
 class CurrentState extends ChangeNotifier {
-  DeviceInfo currentDevice = Devices.ios.iPhone13;
+  DeviceInfo currentDevice = Devices.ios.iPhone16ProMax;
   String selectedCloud = "assets/images/cloudyBlue.svg";
   Gradient bgGradient = const LinearGradient(
     begin: Alignment.topLeft,

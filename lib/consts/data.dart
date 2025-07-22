@@ -17,9 +17,9 @@ const double baseHeight = 790;
 const double baseWidth = 1440;
 
 List<DeviceModel> devices = [
-  DeviceModel(device: Devices.android.onePlus8Pro, icon: Icons.android),
-  DeviceModel(device: Devices.ios.iPhone13, icon: Icons.apple),
-  DeviceModel(device: Devices.ios.iPad, icon: Icons.tablet),
+  DeviceModel(device: Devices.android.googlePixel9ProXL, icon: Icons.android),
+  DeviceModel(device: Devices.ios.iPhone16ProMax, icon: Icons.apple),
+  DeviceModel(device: Devices.ios.iPadPro11InchesM4, icon: Icons.tablet),
 ];
 
 List<ColorModel> colorPalette = [
@@ -151,7 +151,7 @@ final List<JobExperience> education = [
     company: 'Daffodil International University',
     startDate: 'Jan 2019',
     endDate: 'Dec 2023',
-    bulletPoints: ["Lear about Coding and Development!"],
+    bulletPoints: ["Learn about Coding and Development!"],
   ),
   JobExperience(
     color: Colors.blue,

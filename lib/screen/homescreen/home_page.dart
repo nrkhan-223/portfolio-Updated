@@ -20,8 +20,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeProvider theme = Provider.of<ThemeProvider>(context, listen: false);
-    CurrentState currentState =
-        Provider.of<CurrentState>(context, listen: false);
+    CurrentState currentState = Provider.of<CurrentState>(
+      context,
+      listen: false,
+    );
     Size size = MediaQuery.of(context).size;
     theme.size = MediaQuery.of(context).size;
     theme.widthRatio = theme.size.width / baseWidth;
@@ -43,10 +45,7 @@ class HomePage extends StatelessWidget {
             },
           ),
           size.height > 600
-              ? const Rain(
-                  oposite: false,
-                  top: 300,
-                )
+              ? const Rain(oposite: false, top: 300)
               : Container(),
           Selector<CurrentState, String>(
             selector: (context, provider) => provider.selectedCloud,
@@ -59,23 +58,15 @@ class HomePage extends StatelessWidget {
               );
             },
           ),
-          size.height > 600
-              ? const Rain(
-                  oposite: true,
-                  top: 50,
-                )
-              : Container(),
+          size.height > 600 ? const Rain(oposite: true, top: 50) : Container(),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   /// Left side frosted Containers
-
                   phone
                       ? Container()
                       : Column(
@@ -91,7 +82,9 @@ class HomePage extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 margin: EdgeInsets.only(
-                                    top: 0, bottom: 10 * theme.heightRatio),
+                                  top: 0,
+                                  bottom: 10 * theme.heightRatio,
+                                ),
                                 child: FrostedWidget(
                                   childW: Container(
                                     decoration: BoxDecoration(
@@ -107,21 +100,25 @@ class HomePage extends StatelessWidget {
                                           Flexible(
                                             child: Center(
                                               child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(10),
-                                                child: AutoSizeText(
-                                                  'Nasir khan',
-                                                  style: GoogleFonts.exo(
-                                                      fontSize: 35,
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                  maxFontSize: 35,
-                                                  minFontSize: 15,
-                                                  maxLines: 1,
-                                                ).animate().fadeIn(
-                                                    delay: .8.seconds,
-                                                    duration: .7.seconds),
+                                                padding: const EdgeInsets.all(
+                                                  10,
+                                                ),
+                                                child:
+                                                    AutoSizeText(
+                                                      'Nasir khan',
+                                                      style: GoogleFonts.exo(
+                                                        fontSize: 35,
+                                                        color: Colors.white,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
+                                                      maxFontSize: 35,
+                                                      minFontSize: 15,
+                                                      maxLines: 1,
+                                                    ).animate().fadeIn(
+                                                      delay: .8.seconds,
+                                                      duration: .7.seconds,
+                                                    ),
                                               ),
                                             ),
                                           ),
@@ -146,39 +143,46 @@ class HomePage extends StatelessWidget {
                                 childW: Center(
                                   child: Container(
                                     padding: const EdgeInsets.all(10),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Image.asset(
-                                          "assets/icons/topMate.png",
-                                          width: 50 *
-                                              theme.widthRatio *
-                                              theme.heightRatio,
-                                          height: 50 *
-                                              theme.widthRatio *
-                                              theme.heightRatio,
+                                    child:
+                                        Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Image.asset(
+                                              "assets/icons/topMate.png",
+                                              width:
+                                                  50 *
+                                                  theme.widthRatio *
+                                                  theme.heightRatio,
+                                              height:
+                                                  50 *
+                                                  theme.widthRatio *
+                                                  theme.heightRatio,
+                                            ),
+                                            SizedBox(
+                                              height: 10 * theme.heightRatio,
+                                            ),
+                                            Flexible(
+                                              child: AutoSizeText(
+                                                "Let's connect!",
+                                                style: GoogleFonts.exo(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.w700,
+                                                  fontSize:
+                                                      28 *
+                                                      theme.widthRatio *
+                                                      theme.heightRatio,
+                                                ),
+                                                textAlign: TextAlign.center,
+                                                maxFontSize: 28,
+                                                minFontSize: 15,
+                                              ),
+                                            ),
+                                          ],
+                                        ).animate().fadeIn(
+                                          delay: 1.seconds,
+                                          duration: .7.seconds,
                                         ),
-                                        SizedBox(
-                                          height: 10 * theme.heightRatio,
-                                        ),
-                                        Flexible(
-                                            child: AutoSizeText(
-                                          "Let's connect!",
-                                          style: GoogleFonts.exo(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 28 *
-                                                theme.widthRatio *
-                                                theme.heightRatio,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          maxFontSize: 28,
-                                          minFontSize: 15,
-                                        )),
-                                      ],
-                                    ).animate().fadeIn(
-                                        delay: 1.seconds, duration: .7.seconds),
                                   ),
                                 ),
                                 height: 175.5 * theme.heightRatio,
@@ -197,16 +201,19 @@ class HomePage extends StatelessWidget {
                         return DeviceFrame(
                           device: currentState.currentDevice,
                           screen: Container(
-                              decoration: BoxDecoration(
-                                  gradient: currentState.bgGradient),
-                              child: ScreenWrapper(
-                                  childG: currentState.currentScreen)),
+                            decoration: BoxDecoration(
+                              gradient: currentState.bgGradient,
+                            ),
+                            child: ScreenWrapper(
+                              childG: currentState.currentScreen,
+                            ),
+                          ),
                         );
                       },
                     ),
                   ),
 
-                  /// Right side frosted containers
+                  ///
                   phone
                       ? Container()
                       : Column(
@@ -227,88 +234,103 @@ class HomePage extends StatelessWidget {
                                         ...List.generate(
                                           colorPalette.length,
                                           (index) => Consumer<CurrentState>(
-                                              builder: (context, _, __) {
-                                            return CustomButton(
-                                              margin: const EdgeInsets.all(10),
-                                              pressed:
-                                                  currentState.selectedColor ==
-                                                          index
-                                                      ? Pressed.pressed
-                                                      : Pressed.notPressed,
-                                              animate: true,
-                                              borderRadius: 100,
-                                              shadowColor: Colors.blueGrey[50],
-                                              isThreeD: true,
-                                              backgroundColor:
-                                                  colorPalette[index].color,
-                                              width: 50 * theme.widthRatio,
-                                              height: 50 * theme.widthRatio,
-                                              onPressed: () {
-                                                currentState
-                                                    .changeGradient(index);
-                                              },
-                                            );
-                                          }),
-                                        )
+                                            builder: (context, _, __) {
+                                              return CustomButton(
+                                                margin: const EdgeInsets.all(
+                                                  10,
+                                                ),
+                                                pressed:
+                                                    currentState
+                                                            .selectedColor ==
+                                                        index
+                                                    ? Pressed.pressed
+                                                    : Pressed.notPressed,
+                                                animate: true,
+                                                borderRadius: 100,
+                                                shadowColor:
+                                                    Colors.blueGrey[50],
+                                                isThreeD: true,
+                                                backgroundColor:
+                                                    colorPalette[index].color,
+                                                width: 50 * theme.widthRatio,
+                                                height: 50 * theme.widthRatio,
+                                                onPressed: () {
+                                                  currentState.changeGradient(
+                                                    index,
+                                                  );
+                                                },
+                                              );
+                                            },
+                                          ),
+                                        ),
                                       ],
                                     ),
                                   ],
                                 ),
                               ),
                             ),
-                            const SizedBox(
-                              height: 10,
-                            ),
+                            const SizedBox(height: 10),
                             Transform(
                               transform: Matrix4.identity()
                                 ..setEntry(3, 2, 0.00999)
                                 ..rotateY(0.06),
                               alignment: Alignment.topCenter,
                               child: Container(
-                                margin:
-                                    const EdgeInsets.only(top: 0, bottom: 10),
+                                margin: const EdgeInsets.only(
+                                  top: 0,
+                                  bottom: 10,
+                                ),
                                 child: FrostedWidget(
-                                  childW: Center(
-                                    child: Container(
-                                      margin: const EdgeInsets.all(10),
-                                      padding:
-                                          EdgeInsets.all(10 * theme.widthRatio),
-                                      child: Center(
-                                          child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          AutoSizeText(
-                                            '"Don\'t run after success run after perfection success will follow."',
-                                            style: GoogleFonts.inter(
-                                                // fontSize: 30,
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.w400),
-                                            maxFontSize: 25,
-                                            minFontSize: 10,
-                                            maxLines: 3,
+                                  childW:
+                                      Center(
+                                        child: Container(
+                                          margin: const EdgeInsets.all(10),
+                                          padding: EdgeInsets.all(
+                                            10 * theme.widthRatio,
                                           ),
-                                          Align(
-                                              alignment: Alignment.bottomRight,
-                                              child: AutoSizeText(
-                                                '-Baba Ranchhoddas',
-                                                style: GoogleFonts.inter(
-                                                    // fontSize: 12,
-                                                    color: Colors.white
-                                                        .withOpacity(0.6),
-                                                    fontWeight:
-                                                        FontWeight.w400),
-                                                maxFontSize: 12,
-                                                minFontSize: 6,
-                                                maxLines: 1,
-                                              )),
-                                        ],
-                                      )),
-                                    ),
-                                  ).animate().fadeIn(
-                                      delay: 1.seconds, duration: .7.seconds),
+                                          child: Center(
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                AutoSizeText(
+                                                  "Run after clean code, not deadlines. Deadlines will move anyway.",
+                                                  style: GoogleFonts.inter(
+                                                    // fontSize: 30,
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w400,
+                                                  ),
+                                                  maxFontSize: 25,
+                                                  minFontSize: 10,
+                                                  maxLines: 3,
+                                                ),
+                                                Align(
+                                                  alignment:
+                                                      Alignment.bottomRight,
+                                                  child: AutoSizeText(
+                                                    '— Miss Indent A. Lot',
+                                                    style: GoogleFonts.inter(
+                                                      // fontSize: 12,
+                                                      color: Colors.white
+                                                          .withOpacity(0.6),
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                    ),
+                                                    maxFontSize: 12,
+                                                    minFontSize: 6,
+                                                    maxLines: 1,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ).animate().fadeIn(
+                                        delay: 1.seconds,
+                                        duration: .7.seconds,
+                                      ),
                                   height: 175.5 * theme.heightRatio,
                                   width: 245 * theme.widthRatio,
                                 ),
@@ -318,46 +340,46 @@ class HomePage extends StatelessWidget {
                         ),
                 ],
               ),
-              SizedBox(
-                height: 10 * theme.heightRatio,
-              ),
+              SizedBox(height: 10 * theme.heightRatio),
 
-              /// bottom button for device selection
+              ///
               Selector<CurrentState, DeviceInfo>(
-                  selector: (context, p1) => p1.currentDevice,
-                  builder: (context, _, __) {
-                    return Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        ...List.generate(devices.length, (index) {
-                          return CustomButton(
-                            pressed: currentState.currentDevice ==
-                                    devices[index].device
-                                ? Pressed.pressed
-                                : Pressed.notPressed,
-                            animate: true,
-                            borderRadius: 100,
-                            isThreeD: true,
-                            backgroundColor: Colors.black,
-                            width: 37.5,
-                            height: 37.5,
-                            onPressed: () {
-                              currentState.changeSelectedDevice(
-                                devices[index].device,
-                              );
-                            },
-                            child: Center(
-                              child: Icon(
-                                devices[index].icon,
-                                color: Colors.white,
-                                size: 25,
-                              ),
+                selector: (context, p1) => p1.currentDevice,
+                builder: (context, _, __) {
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      ...List.generate(devices.length, (index) {
+                        return CustomButton(
+                          pressed:
+                              currentState.currentDevice ==
+                                  devices[index].device
+                              ? Pressed.pressed
+                              : Pressed.notPressed,
+                          animate: true,
+                          borderRadius: 100,
+                          isThreeD: true,
+                          backgroundColor: Colors.black,
+                          width: 37.5,
+                          height: 37.5,
+                          onPressed: () {
+                            currentState.changeSelectedDevice(
+                              devices[index].device,
+                            );
+                          },
+                          child: Center(
+                            child: Icon(
+                              devices[index].icon,
+                              color: Colors.white,
+                              size: 25,
                             ),
-                          );
-                        })
-                      ],
-                    );
-                  })
+                          ),
+                        );
+                      }),
+                    ],
+                  );
+                },
+              ),
             ],
           ),
         ],

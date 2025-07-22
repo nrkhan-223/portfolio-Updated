@@ -32,7 +32,7 @@ class PhoneHomeScreen extends StatelessWidget {
                           CustomButton(
                             margin: const EdgeInsets.only(bottom: 5),
                             borderRadius: currentState.currentDevice ==
-                                    Devices.ios.iPhone13
+                                    Devices.ios.iPhone16ProMax
                                 ? 8
                                 : 100,
                             onPressed: () {
