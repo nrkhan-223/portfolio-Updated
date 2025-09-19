@@ -234,7 +234,7 @@ const String resumeLink =
     "https://drive.google.com/file/d/1LO3Km6fFkJVW92MNXRLSYl--E9YlTHJd/view";
 const String email = "redoykhan8141@gmail.com";
 String introduction =
-    "I'm a Flutter developer at QuickTech with nearly 2 years of experience building cross-platform apps that are both visually appealing and highly performant. I excel at turning complex ideas into sleek, efficient mobile solutions—and I’m always ready to take on challenges that push my skills to the next level.";
+    "I'm a Flutter developer at QuickTechIT with nearly 2 years of experience building cross-platform apps that are both visually appealing and highly performant. I excel at turning complex ideas into sleek, efficient mobile solutions—and I’m always ready to take on challenges that push my skills to the next level.";
 const String playApps =
     "https://play.google.com/store/apps/developer?id=AppyMonk";
 

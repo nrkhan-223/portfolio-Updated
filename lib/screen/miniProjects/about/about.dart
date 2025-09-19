@@ -42,6 +42,7 @@ class _AboutMeState extends State<AboutMe> {
                 const Center(
                   child: CircleAvatar(
                     radius: 50,
+                    child: ClipOval(child: Image(image: AssetImage('assets/images/me.jpg'))),
                   ),
                 ),
                 Container(
