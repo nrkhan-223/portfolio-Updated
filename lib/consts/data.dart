@@ -139,7 +139,7 @@ List<AppModel> apps = [
     title: "Play Store",
     icon: FontAwesomeIcons.solidCirclePlay,
     color: Colors.white,
-    link: playApps,
+    link: topMate,
   ),
 ];
 

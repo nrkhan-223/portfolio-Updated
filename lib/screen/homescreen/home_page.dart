@@ -95,34 +95,58 @@ class HomePage extends StatelessWidget {
                                         ..setEntry(3, 2, 0.01)
                                         ..rotateY(-0.06),
                                       alignment: FractionalOffset.center,
-                                      child: Row(
-                                        children: [
-                                          Flexible(
-                                            child: Center(
-                                              child: Padding(
-                                                padding: const EdgeInsets.all(
-                                                  10,
-                                                ),
-                                                child:
-                                                    AutoSizeText(
-                                                      'Nasir khan',
-                                                      style: GoogleFonts.exo(
-                                                        fontSize: 35,
-                                                        color: Colors.white,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
-                                                      maxFontSize: 35,
-                                                      minFontSize: 15,
-                                                      maxLines: 1,
-                                                    ).animate().fadeIn(
-                                                      delay: .8.seconds,
-                                                      duration: .7.seconds,
+                                      child: Flexible(
+                                        child: Center(
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(10),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Container(
+                                                  decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                          100,
+                                                        ),
+                                                  ),
+                                                  child: ClipOval(
+                                                    child: Image.asset(
+                                                      "assets/images/me.jpg",
+                                                      width:
+                                                          70 *
+                                                          theme.widthRatio *
+                                                          theme.heightRatio,
+                                                      height:
+                                                          70 *
+                                                          theme.widthRatio *
+                                                          theme.heightRatio,
                                                     ),
-                                              ),
+                                                  ),
+                                                ).animate().fadeIn(
+                                                  delay: .7.seconds,
+                                                  duration: .7.seconds,
+                                                ),
+                                                AutoSizeText(
+                                                  'Nasir khan',
+                                                  style: GoogleFonts.exo(
+                                                    fontSize: 35,
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                  maxFontSize: 35,
+                                                  minFontSize: 15,
+                                                  maxLines: 1,
+                                                ).animate().fadeIn(
+                                                  delay: .8.seconds,
+                                                  duration: .7.seconds,
+                                                ),
+                                              ],
                                             ),
                                           ),
-                                        ],
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -176,6 +200,25 @@ class HomePage extends StatelessWidget {
                                                 textAlign: TextAlign.center,
                                                 maxFontSize: 28,
                                                 minFontSize: 15,
+                                              ),
+                                            ),
+                                            Flexible(
+                                              child: Container(
+                                                alignment: Alignment.centerRight,
+                                                child: AutoSizeText(
+                                                  "Tap so see more.....",
+                                                  style: GoogleFonts.exo(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w700,
+                                                    fontSize:
+                                                        5 *
+                                                        theme.widthRatio *
+                                                        theme.heightRatio,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  maxFontSize: 10,
+                                                  minFontSize: 5,
+                                                ),
                                               ),
                                             ),
                                           ],
